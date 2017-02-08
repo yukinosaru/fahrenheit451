@@ -36,7 +36,7 @@ function quarttoml(x){
 
 function pinttoml(x){
 	var value = parseFloat(x);
-	var newValue = value 473;
+	var newValue = value * 473;
 	return newValue + 'ml';	
 }
 
@@ -63,7 +63,6 @@ for (var i = 0; i < elements.length; i++) {
             var replacedText = replacedText.replace(regexFtoC, F2C);
             var replacedText = replacedText.replace(regexQuarttoL, quarttoml);
             var replacedText = replacedText.replace(regexPinttoL, pinttoml);
-
 
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
