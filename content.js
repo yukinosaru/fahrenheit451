@@ -28,6 +28,17 @@ function lbs2g(x){
 	return newValue;
 }
 
+function quarttoml(x){
+	var value = parseFloat(x);
+	var newValue = value * 946;
+	return newValue + 'ml';
+}
+
+function pinttoml(x){
+	var value = parseFloat(x);
+	var newValue = value 473;
+	return newValue + 'ml';	
+}
 
 var elements = document.getElementsByTagName('*');
 
@@ -44,10 +55,15 @@ for (var i = 0; i < elements.length; i++) {
 			var regexOztoG = /((\d*\s*\d*\/)*(\d*(\s|-)o(z|(unce))+s*))/gi;
 			var regexLbtoG = /((\d*\s*\d*\/)*(\d*(\s|-)((lb)|(pound))+s*))/gi;
 			var regexCupstoG = /((\d*\s*\d*\/)*(\d*(\s|-)cups*))/gi;
+			var regexQuarttoL = /((\d*\s*\d*\/)*(\d*(\s|-)quarts*))/gi;
+			var regexPinttoL = /((\d*\s*\d*\/)*(\d*(\s|-)pints*))/gi;
 
             var replacedText = text.replace(regexOztoG, oz2g);
             var replacedText = replacedText.replace(regexLbtoG, lbs2g);
             var replacedText = replacedText.replace(regexFtoC, F2C);
+            var replacedText = replacedText.replace(regexQuarttoL, quarttoml);
+            var replacedText = replacedText.replace(regexPinttoL, pinttoml);
+
 
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
