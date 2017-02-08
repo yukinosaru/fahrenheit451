@@ -1,0 +1,17 @@
+{
+"manifest_version": 2,
+    "name": "Fahrenheit 451",
+    "description": "Converts Fahrenheit temperatures to celcius",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
